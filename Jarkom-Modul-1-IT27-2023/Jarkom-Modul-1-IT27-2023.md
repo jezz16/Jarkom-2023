@@ -26,9 +26,26 @@ Berapakah acknowledge number (raw) pada packet yang menunjukkan response dari ak
 
 ### Nomor 2
 #### Soal
+Sebutkan web server yang digunakan pada portal praktikum Jaringan Komputer!
+
+#### Langkah Penyelesaian
+1. Buka file pcap
+2. Filter file dengan ip.src == 10.21.78.111 atau tcp.stream eq 43
+4. Pilih salah sati paket dan tcp stream follow
+5. Lihat nama server yang tercantum
+
 
 ### Nomor 3
 #### Soal
+Dapin sedang belajar analisis jaringan. Bantulah Dapin untuk mengerjakan soal berikut:
+a. Berapa banyak paket yang tercapture dengan IP source maupun destination address adalah 239.255.255.250 dengan port 3702?
+b. Protokol layer transport apa yang digunakan?
+
+#### Langkah Penyelesaian
+1. Buka file pcap
+2. Filter file pcap dengan ip.dst == 239.255.255.250 and udp.port == 3702 dan hitung jumlah paket yang ada
+3. Lihat jenis protokol yang digunakan
+
 
 ### Nomor 4
 #### Soal
@@ -84,6 +101,8 @@ Berapa jumlah packet yang menuju IP 184.87.193.88?
 Berikan kueri filter sehingga wireshark hanya mengambil semua protokol paket yang menuju port 80! (Jika terdapat lebih dari 1 port, maka urutkan sesuai dengan abjad)
 
 #### Langkah Penyelesaian
+1. Tentukan filter yang benar (tcp.port == 80 || udp.port == 80)
+2. Masukkan filter ke ncat terminal
 
 
 ### Nomor 9
