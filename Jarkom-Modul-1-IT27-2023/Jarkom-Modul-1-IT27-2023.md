@@ -16,7 +16,7 @@ Berapakah acknowledge number (raw) pada packet yang menunjukkan aktivitas terseb
 Berapakah sequence number (raw) pada packet yang menunjukkan response dari aktivitas tersebut?
 Berapakah acknowledge number (raw) pada packet yang menunjukkan response dari aktivitas tersebut?
 
-### Langkah Penyelesaian
+#### Langkah Penyelesaian
 1. Buka file pcap
 2. Filter ftp file tersebut
 3. cari request c75-GrabThePhisher.zip dan dapatkan hal yang diminta pada soal selanjutnya beralih ke response dari request tersebut.
