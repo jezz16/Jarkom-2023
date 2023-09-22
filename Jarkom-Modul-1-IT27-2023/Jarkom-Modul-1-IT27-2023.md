@@ -110,9 +110,7 @@ Berapa jumlah packet yang menuju IP 184.87.193.88?
 Berikan kueri filter sehingga wireshark hanya mengambil semua protokol paket yang menuju port 80! (Jika terdapat lebih dari 1 port, maka urutkan sesuai dengan abjad)
 
 #### Langkah Penyelesaian
-1. Tentukan filter yang benar (tcp.port == 80 || udp.port == 80)
-   ![soal4-1](https://github.com/jezz16/Jarkom-2023/assets/113823539/ae2966c4-42ec-4d59-a279-215b45e21ab1)
-
+1. Tentukan filter yang benar (tcp.dstport == 80 || udp.dstport == 80)
 2. Masukkan filter ke ncat terminal
    ![soal4-2](https://github.com/jezz16/Jarkom-2023/assets/113823539/24a51248-2d7a-4dd1-a45f-3c557c77b0b4)
 
