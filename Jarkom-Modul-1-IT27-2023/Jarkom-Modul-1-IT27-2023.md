@@ -1,9 +1,8 @@
 # IT 27
 
 ## Anggota Kelompok
-***Arfan Yusran (5027211017***
-
-***Andana Satrio Herdiansah (5027211031)***
+-***Arfan Yusran (5027211017***
+-***Andana Satrio Herdiansah (5027211031)***
 
 
 
