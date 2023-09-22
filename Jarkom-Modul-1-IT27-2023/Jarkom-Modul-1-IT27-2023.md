@@ -31,15 +31,15 @@ Sebutkan web server yang digunakan pada portal praktikum Jaringan Komputer!
 #### Langkah Penyelesaian
 1. Buka file pcap
 2. Filter file dengan ip.src == 10.21.78.111 atau tcp.stream eq 43
-![soal2-1](https://github.com/jezz16/Jarkom-2023/assets/113823539/ad629944-73d4-4198-8e37-2be070c7fa3b)
+   ![soal2-1](https://github.com/jezz16/Jarkom-2023/assets/113823539/ad629944-73d4-4198-8e37-2be070c7fa3b)
 
 3. Pilih salah sati paket dan tcp stream follow
-![soal2-2](https://github.com/jezz16/Jarkom-2023/assets/113823539/3d73ebc9-be71-4e8d-8a11-00543a92ed05)
+   ![soal2-2](https://github.com/jezz16/Jarkom-2023/assets/113823539/3d73ebc9-be71-4e8d-8a11-00543a92ed05)
 
 4. Lihat nama server yang tercantum
-![soal2-3](https://github.com/jezz16/Jarkom-2023/assets/113823539/1e34ba8e-5460-4c53-8136-9e18a9a1a1a3)
+   ![soal2-3](https://github.com/jezz16/Jarkom-2023/assets/113823539/1e34ba8e-5460-4c53-8136-9e18a9a1a1a3)
 
-![soal2-4](https://github.com/jezz16/Jarkom-2023/assets/113823539/be483628-2bf2-45c4-80c6-979ec8886d0f)
+   ![soal2-4](https://github.com/jezz16/Jarkom-2023/assets/113823539/be483628-2bf2-45c4-80c6-979ec8886d0f)
 
 
 ### Nomor 3
