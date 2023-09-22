@@ -33,11 +33,13 @@ Sebutkan web server yang digunakan pada portal praktikum Jaringan Komputer!
 2. Filter file dengan ip.src == 10.21.78.111 atau tcp.stream eq 43
 ![soal2-1](https://github.com/jezz16/Jarkom-2023/assets/113823539/ad629944-73d4-4198-8e37-2be070c7fa3b)
 
-4. Pilih salah sati paket dan tcp stream follow
+3. Pilih salah sati paket dan tcp stream follow
 ![soal2-2](https://github.com/jezz16/Jarkom-2023/assets/113823539/3d73ebc9-be71-4e8d-8a11-00543a92ed05)
 
-5. Lihat nama server yang tercantum
+4. Lihat nama server yang tercantum
 ![soal2-3](https://github.com/jezz16/Jarkom-2023/assets/113823539/1e34ba8e-5460-4c53-8136-9e18a9a1a1a3)
+
+![soal2-4](https://github.com/jezz16/Jarkom-2023/assets/113823539/be483628-2bf2-45c4-80c6-979ec8886d0f)
 
 
 ### Nomor 3
@@ -48,8 +50,10 @@ b. Protokol layer transport apa yang digunakan?
 
 #### Langkah Penyelesaian
 1. Buka file pcap
-2. Filter file pcap dengan ip.dst == 239.255.255.250 and udp.port == 3702 dan hitung jumlah paket yang ada
-3. Lihat jenis protokol yang digunakan
+2. Filter file pcap dengan ip.dst == 239.255.255.250 and udp.port == 3702 
+3. Hitung jumlah paket yang ada dan lihat jenis protokol yang digunakan
+   ![soal3-1](https://github.com/jezz16/Jarkom-2023/assets/113823539/550e516a-97b7-4acb-8fb5-0db37402e9fc)
+   ![soal3-2](https://github.com/jezz16/Jarkom-2023/assets/113823539/69a9bfe3-e176-407a-b84e-f3c3dbebc5d7)
 
 
 ### Nomor 4
@@ -107,7 +111,10 @@ Berikan kueri filter sehingga wireshark hanya mengambil semua protokol paket yan
 
 #### Langkah Penyelesaian
 1. Tentukan filter yang benar (tcp.port == 80 || udp.port == 80)
+   ![soal4-1](https://github.com/jezz16/Jarkom-2023/assets/113823539/ae2966c4-42ec-4d59-a279-215b45e21ab1)
+
 2. Masukkan filter ke ncat terminal
+   ![soal4-2](https://github.com/jezz16/Jarkom-2023/assets/113823539/24a51248-2d7a-4dd1-a45f-3c557c77b0b4)
 
 
 ### Nomor 9
