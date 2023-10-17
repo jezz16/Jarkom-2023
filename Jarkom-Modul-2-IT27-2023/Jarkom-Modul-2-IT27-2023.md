@@ -100,8 +100,21 @@ cp 000-default.conf abimanyu.it27.com
 
 ### Nomor 4
 #### Soal 
-xxxxxxxx
+Kemudian, karena terdapat beberapa web yang harus di-deploy, buatlah subdomain parikesit.abimanyu.yyy.com yang diatur DNS-nya di Yudhistira dan mengarah ke Abimanyu.
 
 
 #### Jawab
+Sebelum menyelesaikan soal pastikan setiap node telah menginstall package yang diperlukan dengan menggunakan script
+```
+#!/bin/bash
+apt-get update
+apt-get upgrade -y
+apt-get install bind9 -y
+apt-get install dnsutils -y
+apt-get install nginx -y
+apt-get install apache2 -y
+apt-get install php -y
+apt-get install lynx -y
+```
+1. Tambahkan script dibawah ke dalam file `/etc/bind/named.conf.local`
 
