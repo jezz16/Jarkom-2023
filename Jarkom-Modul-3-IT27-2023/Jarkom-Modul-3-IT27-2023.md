@@ -10,6 +10,7 @@ _______________________________________________
 ### Nomor 1
 
 #### Soal
+Semua CLIENT harus menggunakan konfigurasi dari DHCP Server
 
 
 #### Jawab
