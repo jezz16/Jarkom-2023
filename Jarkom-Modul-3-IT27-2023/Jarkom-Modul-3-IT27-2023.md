@@ -186,6 +186,26 @@ echo "subnet 10.77.4.0 netmask 255.255.255.0 {
     max-lease-time 5760;
 }" >> /etc/dhcp/dhcpd.conf
 
+echo '# Defaults for isc-dhcp-server (sourced by /etc/init.d/isc-dhcp-server)
+
+# Path to dhcpd's config file (default: /etc/dhcp/dhcpd.conf).
+#DHCPDv4_CONF=/etc/dhcp/dhcpd.conf
+#DHCPDv6_CONF=/etc/dhcp/dhcpd6.conf
+
+# Path to dhcpd's PID file (default: /var/run/dhcpd.pid).
+#DHCPDv4_PID=/var/run/dhcpd.pid
+#DHCPDv6_PID=/var/run/dhcpd6.pid
+
+# Additional options to start dhcpd with.
+#       Don't use options -cf or -pf here; use DHCPD_CONF/ DHCPD_PID instead
+#OPTIONS=""
+
+# On what interfaces should the DHCP server (dhcpd) serve DHCP requests?
+#       Separate multiple interfaces with spaces, e.g. "eth0 eth1".
+INTERFACESv4="eth0"
+INTERFACESv6=""
+' > /etc/default/isc-dhcp-server
+
 service isc-dhcp-server restart
 
 service isc-dhcp-server status
@@ -268,6 +288,8 @@ echo "subnet 10.77.4.0 netmask 255.255.255.0 {
     ...
 }" >> /etc/dhcp/dhcpd.conf
 ```
+dan lakukan ```ping google.com``` di salah satu client
+![ping google](https://github.com/jezz16/Jarkom-2023/assets/113823539/fabb1c9c-ec78-4f5c-8880-c596dd9db028)
 
 
 ### Nomor 5
@@ -276,7 +298,20 @@ echo "subnet 10.77.4.0 netmask 255.255.255.0 {
 Lama waktu DHCP server meminjamkan alamat IP kepada Client yang melalui Switch3 selama 3 menit sedangkan pada client yang melalui Switch4 selama 12 menit. Dengan waktu maksimal dialokasikan untuk peminjaman alamat IP selama 96 menit
 
 #### Jawab
+Untuk bagian pengaturan lease time pada switch 3 dan 4 terletak pada bagian :
+```
+echo "subnet 10.77.3.0 netmask 255.255.255.0 {
+    ...
+    default-lease-time 180;
+    max-lease-time 5760;
+}" >> /etc/dhcp/dhcpd.conf
 
+echo "subnet 10.77.4.0 netmask 255.255.255.0 {
+    ...
+    default-lease-time 720;
+    max-lease-time 5760;
+}" >> /etc/dhcp/dhcpd.conf
+```
 
 
 ### Nomor 6
