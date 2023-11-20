@@ -91,7 +91,48 @@ _______________________________________________
 kalian diminta untuk melakukan register domain berupa riegel.canyon.yyy.com untuk worker Laravel dan granz.channel.yyy.com untuk worker PHP mengarah pada worker yang memiliki IP [prefix IP].x.1.
 
 #### Jawab
+Pertama lakukan iptables di aura
+```
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 192.173.0.0/16
+```
+Setelah itu lakukan setup dns di heiter dengan menjalankan script berikut :
+```
+#!bin/bash
+echo 'nameserver 192.168.122.1' > /etc/resolv.conf
+apt-get update
+apt-get install bind9 -y
 
+echo 'zone "riegel.canyon.it27.com" {
+    type master;
+    file "/etc/bind/jarkom/riegel.canyon.it27.com";
+};
+
+zone "granz.channel.it27.com" {
+    type master;
+    file "/etc/bind/jarkom/granz.channel.it27.com";
+};' > /etc/bind/named.conf.local
+
+mkdir -p /etc/bind/jarkom
+cp /etc/bind/db.local /etc/bind/jarkom/riegel.canyon.it27.com
+cp /etc/bind/db.local /etc/bind/jarkom/granz.channel.it27.com
+
+echo ';
+; BIND data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     riegel.canyon.it27.com. root.riegel.canyon.it27.com. (
+                        2023111401      ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      riegel.canyon.it27.com.
+@       IN      A       10.77.4.1     ;
+www     IN      CNAME   riegel.canyon.it27.com.' > /etc/bind/jarkom/riegel.canyon.it27.com
+
+service bind9 start
+```
 
 
 ### Nomor 1
@@ -100,7 +141,11 @@ kalian diminta untuk melakukan register domain berupa riegel.canyon.yyy.com untu
 Semua CLIENT harus menggunakan konfigurasi dari DHCP Server
 
 #### Jawab
-
+Lakukan konfigurasi node client sesuai dengan yang ada di atas
+```
+auto eth0
+iface eth0 inet dhcp
+```
 
 
 ### Nomor 2
@@ -109,7 +154,64 @@ Semua CLIENT harus menggunakan konfigurasi dari DHCP Server
 Client yang melalui Switch3 mendapatkan range IP dari [prefix IP].3.16 - [prefix IP].3.32 dan [prefix IP].3.64 - [prefix IP].3.80
 
 #### Jawab
+Lakukan konfigurasi dhcp server di himmel dengan menjalankan script berikut :
+Script no1 - no5
+```
+#!/bin/bash
+echo 'nameserver 192.168.122.1' > /etc/resolv.conf
+apt-get update
+apt-get install isc-dhcp-server -y
 
+echo "subnet 10.77.1.0 netmask 255.255.255.0 {}" >> /etc/dhcp/dhcpd.conf
+
+echo "subnet 10.77.2.0 netmask 255.255.255.0 {}" >> /etc/dhcp/dhcpd.conf
+
+echo "subnet 10.77.3.0 netmask 255.255.255.0 {
+    range 10.77.3.16 10.77.3.32;
+    range 10.77.3.64 10.77.3.80;
+    option routers 10.77.3.1;
+    option broadcast-address 10.77.3.255;
+    option domain-name-servers 10.77.1.3;
+    default-lease-time 180;
+    max-lease-time 5760;
+}" >> /etc/dhcp/dhcpd.conf
+
+echo "subnet 10.77.4.0 netmask 255.255.255.0 {
+    range 10.77.4.12 10.77.4.20;
+    range 10.77.4.160 10.77.4.168;
+    option routers 10.77.4.1;
+    option broadcast-address 10.77.4.255;
+    option domain-name-servers 10.77.1.3;
+    default-lease-time 720;
+    max-lease-time 5760;
+}" >> /etc/dhcp/dhcpd.conf
+
+service isc-dhcp-server restart
+
+service isc-dhcp-server status
+```
+Untuk konfigurasi range ip pada switch 3 terletak pada bagian :
+```
+echo "subnet 10.77.3.0 netmask 255.255.255.0 {
+    range 10.77.3.16 10.77.3.32;
+    range 10.77.3.64 10.77.3.80;
+    ...
+}" >> /etc/dhcp/dhcpd.conf
+```
+Lakukan konfigurasi dhcp relay dengan menjalankan script ini di Aura :
+```
+#!/bin/bash
+
+apt-get update
+apt-get install isc-dhcp-relay -y
+service isc-dhcp-relay start
+```
+dan isi ketentuan dhc relay sesuai seperti berikut
+```
+SERVERS="10.77.1.2"
+INTERFACES="eth1 eth2 eth3 eth4"
+OPTIONS=""
+```
 
 
 ### Nomor 3
@@ -118,8 +220,14 @@ Client yang melalui Switch3 mendapatkan range IP dari [prefix IP].3.16 - [prefix
 Client yang melalui Switch4 mendapatkan range IP dari [prefix IP].4.12 - [prefix IP].4.20 dan [prefix IP].4.160 - [prefix IP].4.168
 
 #### Jawab
-
-
+Untuk konfigurasi range ip pada switch 4 terletak pada bagian :
+```
+echo "subnet 10.77.4.0 netmask 255.255.255.0 {
+    range 10.77.4.12 10.77.4.20;
+    range 10.77.4.160 10.77.4.168;
+    ...
+}" >> /etc/dhcp/dhcpd.conf
+```
 
 ### Nomor 4
 
@@ -127,7 +235,39 @@ Client yang melalui Switch4 mendapatkan range IP dari [prefix IP].4.12 - [prefix
 Client mendapatkan DNS dari Heiter dan dapat terhubung dengan internet melalui DNS tersebut
 
 #### Jawab
+Agar bisa terhubung dengan internet lakukan konfigurasi dns server dengan menjalankan script ini di Heiter
+```
+echo 'options {
+      directory "/var/cache/bind";
 
+      forwarders {
+              1.1.1.1;
+      };
+
+      // dnssec-validation auto;
+      allow-query{any;};
+      auth-nxdomain no;    # conform to RFC1035
+      listen-on-v6 { any; };
+}; ' >/etc/bind/named.conf.options
+
+service bind9 restart
+```
+Untuk bagian konfigurasi dhcp server terletak pada bagian:
+```
+echo "subnet 10.77.3.0 netmask 255.255.255.0 {
+    ...
+    option routers 10.77.3.1;
+    option domain-name-servers 10.77.1.3;
+    ...
+}" >> /etc/dhcp/dhcpd.conf
+
+echo "subnet 10.77.4.0 netmask 255.255.255.0 {
+    ...
+    option routers 10.77.4.1;
+    option domain-name-servers 10.77.1.3;
+    ...
+}" >> /etc/dhcp/dhcpd.conf
+```
 
 
 ### Nomor 5
