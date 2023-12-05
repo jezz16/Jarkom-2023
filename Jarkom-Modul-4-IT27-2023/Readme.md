@@ -12,7 +12,7 @@ Andana Satrio Herdiansah | 5027211031
 - [Topologi](#topologi)
 - [Rute Subnet](#rute-subnet)
 - [VLSM](#vlsm-pada-cpt)
-- [CIDR](#cidr)
+- [CIDR](#cidr-pada-gns3)
 
 # Topologi
 ### Cisco Packet Tracer | VLSM |
@@ -33,3 +33,44 @@ Andana Satrio Herdiansah | 5027211031
 
 ## Tree VLSM
 ![Tree VLSM](https://github.com/jezz16/Jarkom-2023/assets/99706251/8c7a1cae-07ff-453f-9903-a11b7eb71d27)
+
+
+# CIDR Pada GNS3
+## Penggabungan Subnet 
+
+### Step I
+---
+
+### Step II
+---
+
+### Step III
+---
+
+### Step IV
+---
+
+### Step V
+---
+
+### Step VI
+---
+
+### Step VII
+---
+
+### Step VIII
+---
+
+### Step IX
+---
+
+Didapatkan netmask akhir pada I1 adalah `/14`
+
+## Pembagian IP CIDR
+![image](https://github.com/jezz16/Jarkom-2023/assets/99706251/0575e3ce-63bd-4d8e-a696-a1f4bf2fc3f0)
+![image](https://github.com/jezz16/Jarkom-2023/assets/99706251/7d2cb34d-da8c-4bc0-9699-1d8e54b9dc5c)
+
+
+## Tree CIDR 
+---
