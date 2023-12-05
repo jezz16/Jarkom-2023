@@ -11,7 +11,7 @@ Andana Satrio Herdiansah | 5027211031
 ## Daftar Isi 
 - [Topologi](#topologi)
 - [Rute Subnet](#rute-subnet)
-- [VLSM](#vlsm)
+- [VLSM](#VLSMPadaCPT)
 - [CIDR](#cidr)
 
 # Topologi
