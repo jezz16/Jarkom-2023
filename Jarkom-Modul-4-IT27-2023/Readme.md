@@ -41,7 +41,7 @@ Andana Satrio Herdiansah | 5027211031
 ## Penggabungan Subnet 
 
 ### Step I
----
+![image](https://github.com/jezz16/Jarkom-2023/assets/99706251/22973447-6711-44b3-aad7-46a2970e745a)
 
 ### Step II
 ---
