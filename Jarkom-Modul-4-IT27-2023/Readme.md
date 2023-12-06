@@ -44,28 +44,28 @@ Andana Satrio Herdiansah | 5027211031
 ![image](https://github.com/jezz16/Jarkom-2023/assets/99706251/22973447-6711-44b3-aad7-46a2970e745a)
 
 ### Step II
----
+![step 2](https://github.com/jezz16/Jarkom-2023/assets/113823539/8e6e559d-5f77-4b2b-abe3-b9685eb594ed)
 
 ### Step III
----
+![step 3](https://github.com/jezz16/Jarkom-2023/assets/113823539/dde1b54f-c3e0-4058-a984-cbf898ec2922)
 
 ### Step IV
----
+![step 4](https://github.com/jezz16/Jarkom-2023/assets/113823539/57ac694f-af10-4865-83f2-7a8d491e8373)
 
 ### Step V
----
+![step 5](https://github.com/jezz16/Jarkom-2023/assets/113823539/defcdf0b-a91c-4a29-b024-cf4a31f35c46)
 
 ### Step VI
----
+![step 6](https://github.com/jezz16/Jarkom-2023/assets/113823539/2a9a193b-0073-4d56-984a-339f7dd39ee0)
 
 ### Step VII
----
+![step 7](https://github.com/jezz16/Jarkom-2023/assets/113823539/cf6d0c66-2bda-4c8b-8d49-7540b2199dab)
 
 ### Step VIII
----
+![step 8](https://github.com/jezz16/Jarkom-2023/assets/113823539/53ccbd3b-12bf-4392-ae76-662fa779fba8)
 
 ### Step IX
----
+![step 9](https://github.com/jezz16/Jarkom-2023/assets/113823539/5ee4060b-8e6e-491e-a282-6e41422d007f)
 
 Didapatkan netmask akhir pada I1 adalah `/14`
 
