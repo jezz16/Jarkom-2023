@@ -68,9 +68,10 @@ Andana Satrio Herdiansah | 5027211031
 Didapatkan netmask akhir pada I1 adalah `/14`
 
 ## Pembagian IP CIDR
-![image](https://github.com/jezz16/Jarkom-2023/assets/99706251/0575e3ce-63bd-4d8e-a696-a1f4bf2fc3f0)
-![image](https://github.com/jezz16/Jarkom-2023/assets/99706251/7d2cb34d-da8c-4bc0-9699-1d8e54b9dc5c)
+![pembagian](https://github.com/jezz16/Jarkom-2023/assets/113823539/e6a0fce6-1274-42e4-843a-f9b3c094939b)
+![pembagian(1)](https://github.com/jezz16/Jarkom-2023/assets/113823539/bbbc3cb1-b1dd-4406-b3b2-ffecb088c8d9)
+
 
 
 ## Tree CIDR 
----
+![Tree CIDR drawio](https://github.com/jezz16/Jarkom-2023/assets/113823539/0e78454b-40ca-4f8b-95d4-4838191c7124)
