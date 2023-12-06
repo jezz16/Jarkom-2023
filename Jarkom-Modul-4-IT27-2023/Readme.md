@@ -20,7 +20,8 @@ Andana Satrio Herdiansah | 5027211031
 
 
 ### GNS3 | CIDR |
-![Tree CIDR drawio](https://github.com/jezz16/Jarkom-2023/assets/113823539/ad51ee0a-158e-4378-82f2-c63be7ec8034)
+![topologi gns](https://github.com/jezz16/Jarkom-2023/assets/113823539/ada3d468-9484-4353-9f95-2090aae39ce8)
+
 
 
 # Rute Subnet
